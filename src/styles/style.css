@@ -1,0 +1,74 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@font-face {
+  font-family: "Oswald";
+  src: url(../assets/fonts/Oswald-Light.woff2);
+  font-weight: 300;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url(../assets/fonts/Oswald-Regular.woff2);
+  font-weight: 400;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url(../assets/fonts/Oswald-Medium.woff2);
+  font-weight: 500;
+  font-display: swap;
+}
+@font-face {
+  font-family: "Oswald";
+  src: url(../assets/fonts/Oswald-SemiBold.woff2);
+  font-weight: 600;
+  font-display: swap;
+}
+
+.burger {
+  position: relative;
+  width: 44px;
+  height: 44px;
+}
+.burger::before,
+.burger::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 24px;
+  border-top: 1px solid black;
+  transition: all ease-in 0.3s;
+}
+.burger::before {
+  box-shadow: 0px 10px 0px black;
+}
+.burger::after {
+  top: calc(50% - 10px);
+}
+.burger.active::before {
+  transform: rotate(45deg);
+  box-shadow: none;
+  top: 50%;
+}
+.burger.active::after {
+  transform: rotate(-45deg);
+  top: 50%;
+}
+.picture {
+  position: relative;
+}
+/* .picture::before {
+  content: url(./../assets/svg/picture.svg);
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: clamp(35px, 1.429rem + 5.357vw, 101px);
+} */
+.title-h1 {
+  font-size: clamp(46px, 1.429rem + 5.357vw, 98px);
+}
+.title-h1 span {
+  font-size: clamp(28px, 1.429rem + 5.357vw, 68px);
+}
